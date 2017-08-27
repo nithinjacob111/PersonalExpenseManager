@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Personal Expense Manager</string>
+    <string-array name="security_questions">
+        <item>Select any</item>
+        <item>Which is your favourite food?</item>
+        <item>What is your mother\'s maiden name?</item>
+        <item>who is your favourite teacher?</item>
+    </string-array>
+    <string name="title_activity_home_screen">Home</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+</resources>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient2"
+    android:orientation="vertical"
+    tools:layout_editor_absoluteX="8dp"
+    tools:layout_editor_absoluteY="8dp"
+    android:weightSum="1">
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_gravity="center"
+        android:layout_width="185dp"
+        android:layout_height="123dp"
+        android:src="@drawable/lock"
+        android:layout_marginTop="150dp"
+        android:alpha="0.8"
+        android:layout_weight="0.14" />
+
+    <EditText
+        android:id="@+id/loginPasswordEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_edittext"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:fontFamily="sans-serif-thin"
+        android:hint="Password"
+        android:padding="10dp"
+        android:paddingLeft="10dp"
+        android:layout_marginTop="50dp"
+        android:ems="10"
+        android:inputType="textPassword" />
+
+    <Button
+        android:id="@+id/loginButton"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:textAllCaps="false"
+        android:textColor="#ffffff"
+        android:textSize="20dp"
+        android:text="Login"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/button_rounded"
+        android:fontFamily="sans-serif-thin"/>
+
+    <Button
+        android:id="@+id/forgotPasswordButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.14"
+        android:text="Forgot Password"
+        android:textSize="15dp"
+        android:textAppearance="@style/Base.Widget.AppCompat.Spinner.Underlined"
+        android:layout_marginTop="130dp"
+        android:textAllCaps="false"
+        android:fontFamily="sans-serif-thin"
+        android:textColor="#ffffff"
+        style="?android:attr/borderlessButtonStyle"/>
+
+</LinearLayout>

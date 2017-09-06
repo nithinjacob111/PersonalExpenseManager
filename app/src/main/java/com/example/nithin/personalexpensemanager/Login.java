@@ -47,6 +47,7 @@ public class Login extends Activity {
                         if (password.equals(pass)) {
                             c.close();
                             Intent i=new Intent(Login.this,HomeScreen.class);
+                            finish();
                             startActivity(i);
                         }else {
                             Toast.makeText(Login.this, "Invalid Credentials", Toast.LENGTH_SHORT).show();

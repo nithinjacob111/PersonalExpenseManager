@@ -21,16 +21,25 @@
         <activity
             android:name=".OneTimeSetup"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustResize"></activity>
+            android:windowSoftInputMode="adjustResize">
+
+        </activity>
         <activity
             android:name=".Login"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait">
+
+        </activity>
         <activity
             android:name=".HomeScreen"
             android:label="@string/title_activity_home_screen"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
-        <activity android:name=".add_data"></activity>
+            android:theme="@style/AppTheme.NoActionBar">
+
+        </activity>
+        <activity android:name=".add_data"
+            android:label="Add Incomes and Expenses"
+            android:screenOrientation="portrait">
+        </activity>
     </application>
 
 </manifest>

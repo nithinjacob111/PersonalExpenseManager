@@ -92,6 +92,7 @@ public class OneTimeSetup extends Activity {
                     editor.putString("mystring","yes");
                     editor.commit();
                     Intent i=new Intent(OneTimeSetup.this,Login.class);
+                    finish();
                     startActivity(i);
                 }
             }

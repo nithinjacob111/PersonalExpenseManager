@@ -6,6 +6,32 @@
         <item>What is your mother\'s maiden name?</item>
         <item>who is your favourite teacher?</item>
     </string-array>
+    <string-array name="income_category">
+        <item>Select a Category</item>
+        <item>Loan</item>
+        <item>Salary</item>
+        <item>Sales</item>
+        <item>Others</item>
+    </string-array>
+    <string-array name="expense_category">
+        <item>Select a Category</item>
+        <item>Clothing</item>
+        <item>Drinks</item>
+        <item>Education</item>
+        <item>Food</item>
+        <item>Fuel</item>
+        <item>Fun</item>
+        <item>Health</item>
+        <item>Highway</item>
+        <item>Hotel</item>
+        <item>Merchandice</item>
+        <item>Personnal</item>
+        <item>Pets</item>
+        <item>Restaurant</item>
+        <item>Tips</item>
+        <item>Transport</item>
+        <item>Others</item>
+    </string-array>
     <string name="title_activity_home_screen">Home</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>

@@ -1,6 +1,165 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:weightSum="1">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/card_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_weight="0.57"
+        card_view:cardCornerRadius="4dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="10dp">
+
+            <EditText
+                android:id="@+id/expenseAmountEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/bodered_edittext"
+                android:ems="10"
+                android:text="0"
+                android:fontFamily="sans-serif"
+                android:hint="Amount"
+                android:inputType="number"
+                android:paddingBottom="5dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="20dp"
+                android:paddingTop="5dp"
+                android:textAlignment="textEnd"
+                android:textSize="30dp" />
+
+            <Spinner
+                android:id="@+id/expenseCategorySpinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:padding="14dp"
+                android:entries="@array/expense_category"
+                android:background="@drawable/bodered_edittext"
+                android:textSize="15dp" />
+
+            <EditText
+                android:id="@+id/expenseDescriptionEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/bodered_edittext"
+                android:ems="10"
+                android:fontFamily="sans-serif"
+                android:hint="description"
+                android:inputType="textMultiLine"
+                android:padding="14dp"
+                android:textSize="15dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingBottom="10dp">
+
+                <EditText
+                    android:id="@+id/expenseSelectDateEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="14dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bodered_edittext_half_rounded"
+                    android:ems="10"
+                    android:fontFamily="sans-serif"
+                    android:hint="Date"
+                    android:inputType="none"
+                    android:editable="false"
+                    android:padding="14dp"
+                    android:textSize="15dp" />
+
+                <Button
+                    android:id="@+id/expenseSelectDateButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="14dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/button_half_rounded"
+                    android:drawableLeft="@drawable/ic_event_black_24dp"
+                    android:fontFamily="sans-serif-thin"
+                    android:paddingLeft="10dp"
+                    android:text="Set Date"
+                    android:textAllCaps="false"
+                    android:textColor="#ffffff"
+                    android:textSize="15dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="59dp"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/expenseSelectTimeEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bodered_edittext_half_rounded"
+                    android:ems="10"
+                    android:fontFamily="sans-serif"
+                    android:hint="Time"
+                    android:inputType="none"
+                    android:editable="false"
+                    android:padding="14dp"
+                    android:textSize="15dp" />
+
+                <Button
+                    android:id="@+id/expenseSelectTimeButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/button_half_rounded"
+                    android:drawableLeft="@drawable/ic_access_time_black_24dp"
+                    android:fontFamily="sans-serif-thin"
+                    android:paddingLeft="10dp"
+                    android:text="Set time"
+                    android:textAllCaps="false"
+                    android:textColor="#ffffff"
+                    android:textSize="15dp" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/addExpenseButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                android:background="@drawable/button_rounded"
+                android:fontFamily="sans-serif-thin"
+                android:text="Add Expense"
+                android:textAllCaps="false"
+                android:textColor="#ffffff"
+                android:textSize="25dp" />
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
 
 </LinearLayout>

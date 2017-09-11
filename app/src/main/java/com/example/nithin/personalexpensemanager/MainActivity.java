@@ -13,7 +13,7 @@ import android.view.WindowManager;
 import android.widget.Toast;
 
 public class MainActivity extends Activity {
-    static SQLiteDatabase db;
+    public static SQLiteDatabase db;
     SharedPreferences settings;
 
     @Override

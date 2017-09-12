@@ -32,6 +32,11 @@
         <item>Transport</item>
         <item>Others</item>
     </string-array>
+    <string-array name="view_types">
+        <item>Monthly</item>
+        <item>Daily</item>
+        <item>Yearly</item>
+    </string-array>
     <string name="title_activity_home_screen">Home</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>

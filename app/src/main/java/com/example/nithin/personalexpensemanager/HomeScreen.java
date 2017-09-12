@@ -14,8 +14,24 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.github.mikephil.charting.charts.BarChart;
+import com.github.mikephil.charting.charts.PieChart;
+import com.github.mikephil.charting.data.BarData;
+import com.github.mikephil.charting.data.BarDataSet;
+import com.github.mikephil.charting.data.BarEntry;
+import com.github.mikephil.charting.data.PieData;
+import com.github.mikephil.charting.data.PieDataSet;
+import com.github.mikephil.charting.data.PieEntry;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import static android.R.attr.label;
+
 public class HomeScreen extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    BarChart barChart;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,8 +44,6 @@ public class HomeScreen extends AppCompatActivity
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
                 Intent i=new Intent(HomeScreen.this,add_data.class);
                 startActivity(i);
             }
@@ -43,6 +57,24 @@ public class HomeScreen extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        barChart=(BarChart)findViewById(R.id.incomeBarGraph);
+        List<BarEntry> barEntries=new ArrayList<>();
+        barEntries.add(new BarEntry(0f,44f));
+        barEntries.add(new BarEntry(1f,56f));
+        barEntries.add(new BarEntry(2f,12f));
+        barEntries.add(new BarEntry(3f,34f));
+        BarDataSet set=new BarDataSet(barEntries,"BarDataSet");
+        //ArrayList<String> theDates=new ArrayList<>();
+        //theDates.add("April");
+        //theDates.add("May");
+        //theDates.add("June");
+        //theDates.add("July");
+
+        BarData barData=new BarData(set);
+        barChart.setData(barData);
+        barChart.setTouchEnabled(true);
+        barChart.setDragEnabled(true);
+
     }
 
     @Override
@@ -85,7 +117,9 @@ public class HomeScreen extends AppCompatActivity
 
         if (id == R.id.menu_home_screen) {
             // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+        } else if (id == R.id.nav_add_records) {
+            Intent i=new Intent(HomeScreen.this,add_data.class);
+            startActivity(i);
 
         } else if (id == R.id.nav_slideshow) {
 

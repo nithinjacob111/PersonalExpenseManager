@@ -88,11 +88,11 @@
                 android:padding="5dp"
                 android:orientation="vertical" >
 
-                <com.github.mikephil.charting.charts.BarChart
+                <com.github.mikephil.charting.charts.PieChart
                     android:layout_width="match_parent"
                     android:layout_height="300dp"
-                    android:id="@+id/incomePieGraph">
-                </com.github.mikephil.charting.charts.BarChart>
+                    android:id="@+id/incomeCategoryPieGraph">
+                </com.github.mikephil.charting.charts.PieChart>
 
             </LinearLayout>
         </android.support.v7.widget.CardView>

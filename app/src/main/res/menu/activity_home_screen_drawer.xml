@@ -10,14 +10,6 @@
             android:id="@+id/nav_add_records"
             android:icon="@drawable/ic_add_black_24dp"
             android:title="Add Records" />
-        <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="Slideshow" />
-        <item
-            android:id="@+id/nav_manage"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="Tools" />
     </group>
 
     <item android:title="">
@@ -26,10 +18,6 @@
                 android:id="@+id/nav_share"
                 android:icon="@drawable/ic_settings_black_24dp"
                 android:title="Settings" />
-            <item
-                android:id="@+id/nav_send"
-                android:icon="@drawable/ic_menu_send"
-                android:title="Send" />
         </menu>
     </item>
 

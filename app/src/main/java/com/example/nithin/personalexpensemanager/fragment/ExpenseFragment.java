@@ -107,7 +107,7 @@ public class ExpenseFragment extends Fragment implements View.OnClickListener {
                 txtDateTime=datetxt+" "+timetxt;
                 if(flag==4) {
                     flag=0;
-                    MainActivity.db.execSQL("CREATE TABLE IF NOT EXISTS Expense_table(Category VARCHAR(30),Amount INTEGER,Sign INTEGER,Description VARCHAR(100),Date DATE,Time TIME,DateAndTime DATETIME,Day INTEGER,Month INTEGER,Year INTEGER);");
+                    MainActivity.db.execSQL("CREATE TABLE IF NOT EXISTS Expense_table(Category VARCHAR(30),Amount INTEGER,Sign1 INTEGER,Description VARCHAR(100),Date1 DATE,Time1 TIME,DateAndTime DATETIME,Day1 INTEGER,Month1 INTEGER,Year1 INTEGER);");
                     MainActivity.db.execSQL("INSERT INTO Expense_table VALUES('"+catSelected+"','"+ExpenseAmount+"','"+sign+"','"+exdespcription+"','"+datetxt+"','"+timetxt+"','"+txtDateTime+"','"+mDay1+"','"+mMonth1+"','"+mYear1+"')");
                     Intent i=new Intent(getActivity(), HomeScreen.class);
                     startActivity(i);

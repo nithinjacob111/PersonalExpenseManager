@@ -31,14 +31,13 @@ import com.github.mikephil.charting.utils.ColorTemplate;
 import java.util.ArrayList;
 import java.util.List;
 
-import static android.R.attr.countDown;
 import static android.R.attr.label;
 
 public class HomeScreen extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    BarChart barChart;
-    PieChart pieChart;
+    BarChart barChart,barChart2;
+    PieChart pieChart,pieChart2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -125,6 +124,7 @@ public class HomeScreen extends AppCompatActivity
             pieChart.setData(data1);
             set1.setColors(ColorTemplate.COLORFUL_COLORS);
             pieChart.setTouchEnabled(true);
+            pieChart.setDescription("Income, Catagory wise");
             pieChart.animateY(3000, Easing.EasingOption.EaseOutCirc);
             c2.close();
 
@@ -151,7 +151,73 @@ public class HomeScreen extends AppCompatActivity
         barChart.setData(theData);
         barChart.setTouchEnabled(true);
         barChart.setDragEnabled(true);*/
+        barChart2=(BarChart)findViewById(R.id.expenseBarGraph);
+        pieChart2=(PieChart)findViewById(R.id.expenseCategoryPieGraph);
 
+        String sql3="SELECT * FROM sqlite_master WHERE type='table' AND name='Expense_table'";
+        Cursor c3 = MainActivity.db.rawQuery(sql3, null);
+        int count3 = c3.getCount();
+        if(count3==0) {
+            c3.close();
+        }else {
+
+
+            String sql4 = "SELECT sum(Amount),month1 FROM Expense_table GROUP BY Month1 ORDER BY DateAndTime";
+            Cursor c4 = MainActivity.db.rawQuery(sql4, null);
+            int count4 = c4.getCount();
+            int[] amount2 = new int[count4];
+            int[] months2 = new int[count4];
+            for (int m = 0; m < count4; m++) {
+                c4.moveToNext();
+                amount2[m] = c4.getInt(0);
+                months2[m] = c4.getInt(1);
+            }
+            ArrayList<BarEntry> yVals1 = new ArrayList<>();
+            for (int i = 0; i < count4; i++) {
+                yVals1.add(new BarEntry(amount2[i], i));
+            }
+            ArrayList<String> xVals1 = new ArrayList<>();
+            for (int i = 0; i < count4; i++) {
+                xVals1.add(monthFloatToString(months2[i]));
+            }
+            BarDataSet set2 = new BarDataSet(yVals1, "Expense amount");
+            BarData data1 = new BarData(xVals1, set2);
+            barChart2.setData(data1);
+            barChart2.setDescription("monthly Expense");
+            barChart2.setTouchEnabled(true);
+            barChart2.animateY(3000, Easing.EasingOption.EaseOutQuad);
+            barChart2.setDragEnabled(true);
+            c4.close();
+
+            String sql5="SELECT sum(Amount),Category FROM Expense_table GROUP BY Category";
+            Cursor c5 = MainActivity.db.rawQuery(sql5, null);
+            int count5 = c5.getCount();
+            int[] amount3 = new int[count5];
+            String[] category1 = new String[count5];
+            for(int m=0; m<count5; m++) {
+                c5.moveToNext();
+                amount3[m] = c5.getInt(0);
+                category1[m] = c5.getString(1);
+            }
+            ArrayList<Entry> entries = new ArrayList<>();
+            for (int i = 0; i < count5; i++) {
+                entries.add(new Entry(amount3[i], i));
+            }
+            ArrayList<String> themonths1 = new ArrayList<String>();
+            for (int i = 0; i < count5; i++) {
+                themonths1.add(category1[i]);
+            }
+            PieDataSet set3 = new PieDataSet(entries, " ");
+            PieData data2 = new PieData(themonths1, set3);
+            pieChart2.setData(data2);
+            set3.setColors(ColorTemplate.COLORFUL_COLORS);
+            pieChart2.setTouchEnabled(true);
+            pieChart2.setDescription("Expense, Catagory wise");
+            pieChart2.animateY(3000, Easing.EasingOption.EaseOutCirc);
+            c5.close();
+            c3.close();
+
+        }
 
     }
     public String monthFloatToString(int monval) {
